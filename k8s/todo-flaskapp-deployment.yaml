@@ -46,7 +46,7 @@ spec:
               value: "27017"
             - name: PORT
               value: "5000"
-          image: coolboi567/todo-flaskapp:latest
+          image: rihabbennour/flaskmango-app:latest
           imagePullPolicy: Always
           name: flask-app
           ports:
