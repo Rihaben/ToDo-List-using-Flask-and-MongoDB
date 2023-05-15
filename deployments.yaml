@@ -29,7 +29,7 @@ spec:
           imagePullPolicy: IfNotPresent
           env:
             - name: MONGO_HOST
-              value: mongo
+              value: 10.97.187.133
             - name: MONGO_PORT
               value: "27017"
           command:
@@ -41,7 +41,7 @@ spec:
             - name: FLASK_ENV
               value: development
             - name: MONGO_HOST
-              value: mongo
+              value: 10.97.187.133
             - name: MONGO_PORT
               value: "27017"
             - name: PORT
