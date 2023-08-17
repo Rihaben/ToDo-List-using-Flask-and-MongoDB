@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # Métadonnées pour le déploiement
+  name: mongo
+spec:
+  # Nombre de répliques (pods) souhaitées
+  replicas: 1
+  selector:
+    matchLabels:
+      # Sélection des pods ayant cette étiquette
+      io.kompose.service: mongo
+  strategy:
+    # Type de stratégie de mise à jour des pods
+    type: Recreate
+  template:
+    metadata:
+      # Étiquettes pour les pods générés par ce déploiement
+      labels:
+        io.kompose.service: mongo
+    spec:
+      containers:
+        # Définition du conteneur MongoDB
+        - image: mvertes/alpine-mongo:latest
+          name: mongo
+          ports:
+            - containerPort: 27017
+          resources: {}
+      # Politique de redémarrage des pods en cas d'échec
+      restartPolicy: Always
